@@ -37,11 +37,11 @@ def samnishna(number):
     if(erteuli == 0 and ateuli == 0):
         return s6[aseuli-1] + s8[0]
     if(erteuli == 0 and ateuli > 0):
-        return s6[aseuli-1] + " " + s4[ateuli-1]
+        return s6[aseuli-1] + "" + s4[ateuli-1]
     if(erteuli > 0 and ateuli == 0):
-        return s6[aseuli-1] + " " + s1[erteuli]
+        return s6[aseuli-1] + "" + s1[erteuli]
     else:
-        return s6[aseuli-1] + " " + ornishna(ateuli * 10 + erteuli)
+        return s6[aseuli-1] + "" + ornishna(ateuli * 10 + erteuli)
 
 def n_1_999_to_word(number):
     if(number == 0):
@@ -63,19 +63,19 @@ def number_to_word(number,word):
             word += " " + n_1_999_to_word(number)
         return word
     if(number > 999 and number < 1000000):
-        word += " " + n_1_999_to_word(int(number / 1000)) +" "+ s7[0]
+        word += " " + n_1_999_to_word(int(number / 1000)) +""+ s7[0]
         number = get_symbols(number,3)
         return number_to_word(number, word)
     if(number > 999999 and number < 1000000000):
-        word += " " + n_1_999_to_word(int(number / 1000000)) +" "+ s7[1]
+        word += " " + n_1_999_to_word(int(number / 1000000)) +""+ s7[1]
         number = get_symbols(number,6)
         return number_to_word(number, word)
     if(number > 999999999 and number < 1000000000000):
-        word += " " + n_1_999_to_word(int(number / 1000000000)) +" "+ s7[2]
+        word += " " + n_1_999_to_word(int(number / 1000000000)) +""+ s7[2]
         number = get_symbols(number,9)
         return number_to_word(number, word)
     if(number > 999999999999 and number < 1000000000000000):
-        word += " " + n_1_999_to_word(int(number / 1000000000000)) +" "+ s7[3]
+        word += " " + n_1_999_to_word(int(number / 1000000000000)) +""+ s7[3]
         number = get_symbols(number,12)
         return number_to_word(number, word)
 
@@ -85,5 +85,5 @@ def get_result(my_number):
     else:
         return number_to_word(my_number,"")
 
-my_number = 100000000000000
+my_number = 123456789012345
 print(get_result(my_number))
